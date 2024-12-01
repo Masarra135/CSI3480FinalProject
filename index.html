@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encryption and Decryption Tool</title>
+  </head>
+  <body>
+    <header>
+      <h1>Encryption and Decryption Tool</h1>
+    </header>
+    <main>
+      <!-- Form for Encryption -->
+      <section>
+        <h2>Encrypt a Message</h2>
+        <form method="POST" action="/encrypt">
+          <label for="plain_text">Enter Plain Text:</label>
+          <input type="text" id="plain_text" name="plain_text" required />
+          <button type="submit">Encrypt</button>
+        </form>
+        {% if encrypted_message %source venv/bin/activate }
+        <p><strong>Encrypted Message:</strong> {{ encrypted_message }}</p>
+        {% endif %}
+      </section>
+
+      <!-- Form for Decryption -->
+      <section>
+        <h2>Decrypt a Message</h2>
+        <form method="POST" action="/decrypt">
+          <label for="cipher_text">Enter Cipher Text:</label>
+          <input type="text" id="cipher_text" name="cipher_text" required />
+          <button type="submit">Decrypt</button>
+        </form>
+        {% if decrypted_message %}
+        <p><strong>Decrypted Message:</strong> {{ decrypted_message }}</p>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>
